@@ -1,12 +1,15 @@
 import { MapPin, Navigation } from "lucide-react";
 import { Button } from "../ui/button";
 import { CONTACT } from "../../data";
+import React from "react";
 
 const LAT = -28.0155;
 const LON = -49.5925;
-const EMBED = `https://www.openstreetmap.org/export/embed.html?bbox=${LON - 0.09}%2C${
-  LAT - 0.06
-}%2C${LON + 0.09}%2C${LAT + 0.06}&layer=mapnik&marker=${LAT}%2C${LON}`;
+const EMBED = `https://www.openstreetmap.org/export/embed.html?bbox=${
+  LON - 0.09
+}%2C${LAT - 0.06}%2C${LON + 0.09}%2C${
+  LAT + 0.06
+}&layer=mapnik&marker=${LAT}%2C${LON}`;
 
 export function Localizacao() {
   return (
@@ -30,9 +33,10 @@ export function Localizacao() {
               </p>
             </div>
             <p className="mt-6 text-[15px] leading-relaxed text-muted-foreground">
-              A poucos minutos do centro de Urubici, a propriedade combina o sossego do campo com a
-              conveniência de estar perto de restaurantes, mercados e dos principais atrativos da
-              região. Estradas de fácil acesso levam você diretamente à natureza.
+              A poucos minutos do centro de Urubici, a propriedade combina o
+              sossego do campo com a conveniência de estar perto de
+              restaurantes, mercados e dos principais atrativos da região.
+              Estradas de fácil acesso levam você diretamente à natureza.
             </p>
             <Button
               asChild

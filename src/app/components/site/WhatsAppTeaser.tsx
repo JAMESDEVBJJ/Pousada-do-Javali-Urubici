@@ -1,15 +1,14 @@
 import { useEffect, useState } from "react";
 import { X } from "lucide-react";
 import { waLink } from "../../data";
+import React from "react";
 
-// Bolha "falsa" de notificação que aparece acima do botão do WhatsApp
-// após 10s, simulando uma mensagem recebida em tempo real.
 export function WhatsAppTeaser() {
   const [show, setShow] = useState(false);
   const [dismissed, setDismissed] = useState(false);
 
   useEffect(() => {
-    const t = setTimeout(() => setShow(true), 10000);
+    const t = setTimeout(() => setShow(true), 12000);
     return () => clearTimeout(t);
   }, []);
 
@@ -29,11 +28,16 @@ export function WhatsAppTeaser() {
           </span>
           <div className="min-w-0 flex-1">
             <div className="flex items-center justify-between gap-2">
-              <p className="truncate text-[13px] text-primary">Claudio Xavier</p>
-              <span className="shrink-0 text-[10px] text-muted-foreground">agora</span>
+              <p className="truncate text-[13px] text-primary">
+                Claudio Xavier
+              </p>
+              <span className="shrink-0 text-[10px] text-muted-foreground">
+                agora
+              </span>
             </div>
             <p className="mt-0.5 text-[13px] leading-snug text-muted-foreground">
-              Olá! Em caso de dúvidas deixe aqui que respondemos assim que possível! Obrigado!
+              Olá! Em caso de dúvidas deixe aqui que respondemos assim que
+              possível! Obrigado!
             </p>
           </div>
         </div>
