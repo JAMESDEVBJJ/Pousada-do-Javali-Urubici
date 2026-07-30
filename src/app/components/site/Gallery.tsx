@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight, X, ZoomIn } from "lucide-react";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
 import { GALLERY, type GalleryImage } from "../../data";
+import React from "react";
 
 type GalleryProps = {
   active?: string;
@@ -20,7 +21,8 @@ export function Gallery({ active: controlled, onActiveChange }: GalleryProps) {
   const album = GALLERY.find((a) => a.id === active) ?? GALLERY[0];
 
   const [lightbox, setLightbox] = useState<Lightbox | null>(null);
-  const open = (images: GalleryImage[], index: number) => setLightbox({ images, index });
+  const open = (images: GalleryImage[], index: number) =>
+    setLightbox({ images, index });
 
   return (
     <section id="galeria" className="scroll-mt-24 bg-secondary/40">
@@ -74,7 +76,7 @@ export function Gallery({ active: controlled, onActiveChange }: GalleryProps) {
                   image={img}
                   onOpen={() => open(b.images, i)}
                 />
-              )),
+              ))
             )}
           </div>
         )}
@@ -268,7 +270,10 @@ function LightboxView({
         <X className="size-5" />
       </button>
 
-      <div className="relative flex max-h-full max-w-5xl flex-col items-center" onClick={(e) => e.stopPropagation()}>
+      <div
+        className="relative flex max-h-full max-w-5xl flex-col items-center"
+        onClick={(e) => e.stopPropagation()}
+      >
         <ImageWithFallback
           src={current.src}
           alt={current.caption}

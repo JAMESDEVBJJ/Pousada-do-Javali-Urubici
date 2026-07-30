@@ -1,6 +1,7 @@
 import { Check, Phone } from "lucide-react";
 import { Button } from "../ui/button";
 import { waLink, telLink, CONTACT } from "../../data";
+import React from "react";
 
 export function Valores() {
   return (
