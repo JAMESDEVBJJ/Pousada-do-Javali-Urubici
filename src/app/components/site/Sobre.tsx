@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
 import { IMAGES } from "../../data";
+import React from "react";
 
 const FEATURES = [
   { icon: Home, label: "2 chalés completos" },
@@ -50,7 +51,6 @@ type SobreProps = {
 export function Sobre({ onSelectChale }: SobreProps) {
   return (
     <section id="sobre" className="scroll-mt-24 bg-background">
-      {/* Narrative */}
       <div className="mx-auto grid max-w-7xl gap-12 px-6 py-24 md:px-10 lg:grid-cols-2 lg:gap-20 lg:py-32">
         <div className="flex flex-col justify-center">
           <span className="text-[11px] uppercase tracking-[0.32em] text-[color:var(--accent)]">
@@ -91,13 +91,12 @@ export function Sobre({ onSelectChale }: SobreProps) {
           />
           <div className="absolute -bottom-6 -left-6 hidden w-56 rounded-2xl bg-primary p-6 text-primary-foreground shadow-2xl sm:block">
             <p className="mt-1 text-sm text-primary-foreground/75">
-              Natureza preservada
+              Energia solar renovável
             </p>
           </div>
         </div>
       </div>
 
-      {/* Características */}
       <div className="border-y border-border bg-secondary/40">
         <div className="mx-auto grid max-w-7xl grid-cols-2 gap-px overflow-hidden px-6 py-4 md:grid-cols-4 md:px-10">
           {FEATURES.map((f) => (
@@ -117,7 +116,6 @@ export function Sobre({ onSelectChale }: SobreProps) {
         </div>
       </div>
 
-      {/* Chalés overview */}
       <div
         id="chales"
         className="mx-auto max-w-7xl scroll-mt-24 px-6 py-24 md:px-10 lg:py-28"
@@ -127,7 +125,7 @@ export function Sobre({ onSelectChale }: SobreProps) {
             Os dois chalés
           </span>
           <h2 className="mt-4 font-[family-name:var(--font-display)] text-[clamp(2rem,4vw,3rem)] font-light leading-[1.1] text-primary">
-            Duas casas, uma mesma paisagem.
+            Duas casas, uma paisagem.
           </h2>
         </div>
 
