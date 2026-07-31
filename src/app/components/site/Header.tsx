@@ -3,6 +3,7 @@ import { Menu, X } from "lucide-react";
 import { Button } from "../ui/button";
 import { waLink } from "../../data";
 import React from "react";
+import "../../../styles/header.css";
 
 function BoarIcon({ className }: { className?: string }) {
   return (
@@ -45,7 +46,7 @@ export function Header() {
           : "bg-transparent"
       }`}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-10 md:py-5">
+      <div className="header-container">
         <button
           onClick={() => go("inicio")}
           className="flex items-center gap-2.5 text-primary-foreground"
