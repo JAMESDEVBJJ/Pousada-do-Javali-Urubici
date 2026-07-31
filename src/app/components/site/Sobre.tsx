@@ -86,7 +86,7 @@ export function Sobre({ onSelectChale }: SobreProps) {
         <div className="relative">
           <ImageWithFallback
             src={IMAGES.sitio}
-            alt="O sítio da Hospedagem do Javali cercado pela mata nativa"
+            alt="O sítio da Pousada do Javali cercado pela mata nativa e um céu lindo"
             className="h-[420px] w-full rounded-[2rem] object-cover shadow-xl lg:h-[560px]"
           />
           <div className="absolute -bottom-6 -left-6 hidden w-56 rounded-2xl bg-primary p-6 text-primary-foreground shadow-2xl sm:block">

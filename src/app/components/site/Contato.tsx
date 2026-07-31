@@ -1,6 +1,7 @@
 import { MessageCircle, Phone } from "lucide-react";
 import { Button } from "../ui/button";
 import { waLink, telLink, CONTACT } from "../../data";
+import React from "react";
 
 export function Contato() {
   return (
@@ -14,7 +15,7 @@ export function Contato() {
         </h2>
         <p className="mt-5 text-[15px] leading-relaxed text-muted-foreground">
           Fale diretamente conosco pelo WhatsApp ou por telefone. Teremos prazer em apresentar cada
-          detalhe da Hospedagem do Javali.
+          detalhe da Pousada do Javali.
         </p>
 
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">

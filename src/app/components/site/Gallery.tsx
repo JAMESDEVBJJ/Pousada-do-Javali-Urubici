@@ -54,7 +54,6 @@ export function Gallery({ active: controlled, onActiveChange }: GalleryProps) {
         </div>
 
         {album.carousel ? (
-          // Chalés: cada categoria vira um carrossel, centralizado
           <div className="flex flex-wrap justify-center gap-6">
             {album.blocks.map((b) => (
               <CarouselTile
@@ -66,7 +65,6 @@ export function Gallery({ active: controlled, onActiveChange }: GalleryProps) {
             ))}
           </div>
         ) : (
-          // Exterior: cada foto é um tile individual
           <div className="grid auto-rows-[240px] grid-cols-2 gap-4 md:auto-rows-[300px] md:grid-cols-3">
             {album.blocks.flatMap((b) =>
               b.images.map((img, i) => (

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "../ui/button";
 import { waLink } from "../../data";
+import React from "react";
 
 function BoarIcon({ className }: { className?: string }) {
   return (
