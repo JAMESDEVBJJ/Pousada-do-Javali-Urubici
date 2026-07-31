@@ -1,4 +1,3 @@
-// Central place for imagery and property data used across the one-page site.
 import sitioImg from "../imports/9fc7fa63-cf0d-4e3b-816b-f540ab44016a.jfif";
 import alamedaChurrasImg from "../imports/churrasqueiraNoLago.jfif";
 import casaJavaliImg from "../imports/serra.jpg";
@@ -95,15 +94,11 @@ export const GALLERY: GalleryAlbum[] = [
       },
       {
         label: "Casa de vidro",
-        images: [
-          { src: casaVidroImg, caption: "Casa de vidro" },
-        ],
+        images: [{ src: casaVidroImg, caption: "Casa de vidro" }],
       },
       {
         label: "Casa do Javali",
-        images: [
-          { src: casaJavaliImg, caption: "Casa do Javali" },
-        ],
+        images: [{ src: casaJavaliImg, caption: "Casa do Javali" }],
       },
       {
         label: "Churrasqueira no lago",
@@ -116,9 +111,7 @@ export const GALLERY: GalleryAlbum[] = [
       },
       {
         label: "Lago de carpas",
-        images: [
-          { src: lagoCarpasImg, caption: "Lago de carpas" },
-        ],
+        images: [{ src: lagoCarpasImg, caption: "Lago de carpas" }],
       },
       {
         label: "Caminho",
@@ -222,8 +215,7 @@ export const ATTRACTIONS: Attraction[] = [
   {
     name: "Pedra Furada",
     distance: "≈ 35 min",
-    description:
-      "Formação rochosa icônica, cartão-postal de Urubici.",
+    description: "Formação rochosa icônica, cartão-postal de Urubici.",
   },
   {
     name: "Cascata Véu de Noiva",
@@ -234,21 +226,22 @@ export const ATTRACTIONS: Attraction[] = [
   {
     name: "Inscrições Rupestres",
     distance: "≈ 20 min",
-    description:
-      "Registros milenares gravados nas pedras da região.",
+    description: "Registros milenares gravados nas pedras da região.",
   },
 ];
 
 export const CONTACT = {
-  name: "Hospedagem do Javali",
+  name: "Pousada do Javali",
   phoneDisplay: "(47) 9254-5804",
   phoneRaw: "+554792545804",
   whatsappRaw: "554792545804",
   whatsappMsg:
-    "Olá! Vi o anúncio da Hospedagem do Javali em Urubici e gostaria de mais informações.",
+    "Olá! Vi o anúncio da Pousada do Javali em Urubici e gostaria de mais informações.",
   address: "Estrada Geral da Jararaca — Urubici, SC, 88650-000",
 };
 
 export const waLink = () =>
-  `https://wa.me/${CONTACT.whatsappRaw}?text=${encodeURIComponent(CONTACT.whatsappMsg)}`;
+  `https://wa.me/${CONTACT.whatsappRaw}?text=${encodeURIComponent(
+    CONTACT.whatsappMsg
+  )}`;
 export const telLink = () => `tel:${CONTACT.phoneRaw}`;

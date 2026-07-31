@@ -6,9 +6,9 @@ import React from "react";
 export function Valores() {
   return (
     <section id="valores" className="scroll-mt-24 bg-primary text-primary-foreground">
-      <div className="mx-auto max-w-7xl px-6 py-24 md:px-10 lg:py-32">
+      <div className="mx-auto max-w-7xl px-6 py-16 md:px-10 lg:py-20">
         <div className="mb-14 text-center">
-          <span className="text-[11px] uppercase tracking-[0.32em] text-[color:var(--secondary)]">
+          <span className="text-[12px] uppercase tracking-[0.32em] text-[color:var(--secondary)]">
             Oportunidade
           </span>
           <h2 className="mt-4 font-[family-name:var(--font-display)] text-[clamp(2rem,4vw,3.2rem)] font-light">
@@ -16,14 +16,14 @@ export function Valores() {
           </h2>
         </div>
 
-        <div className="mx-auto grid max-w-4xl gap-8 md:grid-cols-2">
+        <div className="mx-auto grid max-w-5xl gap-15 md:grid-cols-2">
           {/* Venda */}
           <div className="flex flex-col rounded-[2rem] border border-primary-foreground/15 bg-primary-foreground/[0.04] p-9">
-            <span className="text-[11px] uppercase tracking-[0.28em] text-primary-foreground/60">
+            <span className="text-[12px] uppercase tracking-[0.28em] text-primary-foreground/60">
               Venda
             </span>
             <p className="mt-4 font-[family-name:var(--font-display)] text-[clamp(2.4rem,5vw,3.5rem)] font-light leading-none">
-              R$ 3.000.000
+              R$ 2.800.000
             </p>
             <p className="mt-3 text-sm text-primary-foreground/70">Aceita propostas.</p>
             <ul className="mt-7 space-y-3 text-sm text-primary-foreground/85">
@@ -51,7 +51,7 @@ export function Valores() {
             <span className="absolute right-6 top-6 rounded-full bg-black/15 px-3 py-1 text-[10px] uppercase tracking-[0.2em]">
               Destaque
             </span>
-            <span className="text-[11px] uppercase tracking-[0.28em] text-[color:var(--accent-foreground)]/70">
+            <span className="text-[12px] uppercase tracking-[0.28em] text-[color:var(--accent-foreground)]/70">
               Locação Mensal
             </span>
             <p className="mt-4 font-[family-name:var(--font-display)] text-[clamp(2.4rem,5vw,3.5rem)] font-light leading-none">
