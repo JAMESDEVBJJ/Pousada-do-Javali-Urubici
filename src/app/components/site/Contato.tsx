@@ -6,14 +6,14 @@ import React from "react";
 export function Contato() {
   return (
     <section id="contato" className="scroll-mt-24 bg-secondary/50">
-      <div className="mx-auto max-w-3xl px-6 py-24 text-center md:px-10 lg:py-32">
-        <span className="text-[11px] uppercase tracking-[0.32em] text-[color:var(--accent)]">
+     <div className="mx-auto max-w-3xl px-6 py-16 md:py-20 text-center">
+        <span className="text-[13px] uppercase tracking-[0.32em] text-[color:var(--accent)]">
           Contato
         </span>
         <h2 className="mt-4 font-[family-name:var(--font-display)] text-[clamp(2.2rem,5vw,3.6rem)] font-light leading-[1.1] text-primary">
           Gostou da propriedade? Agende uma visita.
         </h2>
-        <p className="mt-5 text-[15px] leading-relaxed text-muted-foreground">
+        <p className="mt-5 text-[16px] leading-relaxed text-muted-foreground">
           Fale diretamente conosco pelo WhatsApp ou por telefone. Teremos prazer em apresentar cada
           detalhe da Pousada do Javali.
         </p>

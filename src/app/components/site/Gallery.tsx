@@ -26,10 +26,10 @@ export function Gallery({ active: controlled, onActiveChange }: GalleryProps) {
 
   return (
     <section id="galeria" className="scroll-mt-24 bg-secondary/40">
-      <div className="mx-auto max-w-7xl px-6 py-24 md:px-10 lg:py-28">
+      <div className="mx-auto max-w-7xl px-6 py-18 md:px-10 lg:py-18">
         <div className="mb-10 flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div className="max-w-xl">
-            <span className="text-[11px] uppercase tracking-[0.32em] text-[color:var(--accent)]">
+            <span className="text-[13px] uppercase tracking-[0.32em] text-[color:var(--accent)]">
               Galeria
             </span>
             <h2 className="mt-4 font-[family-name:var(--font-display)] text-[clamp(2rem,4vw,3rem)] font-light leading-[1.1] text-primary">
@@ -54,7 +54,7 @@ export function Gallery({ active: controlled, onActiveChange }: GalleryProps) {
         </div>
 
         {album.carousel ? (
-          <div className="flex flex-wrap justify-center gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {album.blocks.map((b) => (
               <CarouselTile
                 key={`${album.id}-${b.label}`}
@@ -164,7 +164,7 @@ function CarouselTile({
 
   return (
     <figure
-      className="group relative h-[300px] w-full touch-pan-y select-none overflow-hidden rounded-2xl bg-muted sm:w-[420px] md:h-[360px]"
+      className="group relative h-[300px] w-full min-w-0 touch-pan-y select-none overflow-hidden rounded-2xl bg-muted md:h-[320px] xl:h-[320px]"
       onPointerDown={onPointerDown}
       onPointerMove={onPointerMove}
       onPointerUp={onPointerUp}

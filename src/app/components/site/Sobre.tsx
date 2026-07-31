@@ -56,15 +56,15 @@ type SobreProps = {
 export function Sobre({ onSelectChale }: SobreProps) {
   return (
     <section id="sobre" className="scroll-mt-24 bg-background">
-      <div className="mx-auto grid max-w-7xl gap-12 px-6 py-24 md:px-10 lg:grid-cols-2 lg:gap-20 lg:py-32">
+      <div className="mx-auto grid max-w-7xl gap-12 px-6 py-18 md:px-10 lg:grid-cols-2 lg:gap-20 lg:py-24">
         <div className="flex flex-col justify-center">
-          <span className="text-[11px] uppercase tracking-[0.32em] text-[color:var(--accent)]">
+          <span className="text-[12px] uppercase tracking-[0.32em] text-[color:var(--accent)]">
             Sobre a propriedade
           </span>
           <h2 className="mt-4 font-[family-name:var(--font-display)] text-[clamp(2rem,4vw,3.2rem)] font-light leading-[1.1] text-primary">
             Em meio à natureza e à serra de Urubici
           </h2>
-          <div className="mt-7 space-y-5 text-[15px] leading-relaxed text-muted-foreground">
+          <div className="mt-7 space-y-5 text-[16px] leading-relaxed text-muted-foreground">
             <p>
               Localizada na Estrada Geral da Jararaca, em Urubici, a propriedade
               reúne dois chalés independentes construídos em madeira, cercados
@@ -115,7 +115,7 @@ export function Sobre({ onSelectChale }: SobreProps) {
 
       <div
         id="chales"
-        className="mx-auto max-w-7xl scroll-mt-24 px-6 py-24 md:px-10 lg:py-28"
+        className="mx-auto max-w-7xl scroll-mt-24 px-6 py-16 md:px-10 lg:py-18"
       >
         <div className="mb-14 max-w-2xl">
           <span className="text-[13px] uppercase tracking-[0.32em] text-[color:var(--accent)]">
