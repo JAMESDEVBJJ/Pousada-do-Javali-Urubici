@@ -1,6 +1,7 @@
 import { MapPin } from "lucide-react";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
 import { ATTRACTIONS, IMAGES } from "../../data";
+import React from "react";
 
 export function Attractions() {
   return (
@@ -18,15 +19,15 @@ export function Attractions() {
       <div className="relative mx-auto max-w-7xl px-6 py-20 md:px-10 lg:py-20">
         <div className="mb-14 max-w-2xl">
           <span className="text-[12px] uppercase tracking-[0.32em] text-[color:var(--secondary)]">
-            Próximo de
+            Próximo das
           </span>
           <h2 className="mt-4 font-[family-name:var(--font-display)] text-[clamp(2rem,4vw,3rem)] font-light leading-[1.1]">
-            Os cartões-postais de Urubici ao seu redor.
+            Principais atrações de Urubici.
           </h2>
           <p className="mt-5 text-[16px] leading-relaxed text-primary-foreground/75">
-            A propriedade está a poucos minutos de alguns dos destinos mais procurados da Serra
-            Catarinense — um diferencial e tanto para moradores e para quem deseja empreender com
-            turismo.
+            Em poucos minutos você chega a alguns dos pontos turísticos mais
+            conhecidos da Serra Catarinense, aproveitando o melhor da região sem
+            precisar percorrer longas distâncias.
           </p>
         </div>
 
@@ -38,9 +39,13 @@ export function Attractions() {
             >
               <div className="flex items-center gap-2 text-[color:var(--secondary)]">
                 <MapPin className="size-4" />
-                <span className="text-[12px] uppercase tracking-[0.18em]">{a.distance}</span>
+                <span className="text-[12px] uppercase tracking-[0.18em]">
+                  {a.distance}
+                </span>
               </div>
-              <h3 className="mt-3 font-[family-name:var(--font-display)] text-xl">{a.name}</h3>
+              <h3 className="mt-3 font-[family-name:var(--font-display)] text-xl">
+                {a.name}
+              </h3>
               <p className="mt-2 text-sm leading-relaxed text-primary-foreground/70">
                 {a.description}
               </p>

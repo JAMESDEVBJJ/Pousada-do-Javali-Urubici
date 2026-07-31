@@ -17,17 +17,15 @@ import React from "react";
 
 const FEATURES = [
   { icon: Home, label: "2 chalés completos" },
+  { icon: Trees, label: "Natureza preservada" },
+  { icon: Flame, label: "Lareira" },
+  { icon: ChefHat, label: "Cozinhas equipadas" },
   { icon: BedDouble, label: "Quartos aconchegantes" },
   { icon: Bath, label: "Banheiros privativos" },
-  { icon: ChefHat, label: "Cozinhas equipadas" },
-  { icon: Trees, label: "Natureza preservada" },
-  { icon: Mountain, label: "Vista para a serra" },
-  { icon: Flame, label: "Lareira" },
-  { icon: Sun, label: "Energia solar renovável" },
-  { icon: Wifi, label: "Wi-Fi" },
-  { icon: Baby, label: "Parquinho infantil" },
   { icon: Fish, label: "Lago de carpas" },
-  { icon: Bath, label: "Jacuzzi" },
+  { icon: Wifi, label: "Wi-Fi gratuito" },
+  { icon: Mountain, label: "Vista para a serra" },
+  { icon: Baby, label: "Parquinho infantil" },
 ];
 
 const CHALES = [
@@ -35,7 +33,7 @@ const CHALES = [
     albumId: "chale1",
     tag: "A Casa de vidro",
     title: "Casa de vidro",
-    text: "Luz natural durante todo o dia, teto de vidro, lustres e uma jacuzzi para relaxar. Varanda pra floresta e cozinha completa para sua estadia.",
+    text: "Luz natural durante todo o dia, teto de vidro, lustres, chao quente e uma jacuzzi para relaxar. Varanda pra floresta e cozinha completa para sua estadia.",
     img: IMAGES.casas,
     imgClass: "object-right scale-[1.4] origin-right group-hover:scale-[1.45]",
   },
@@ -43,7 +41,7 @@ const CHALES = [
     albumId: "chale2",
     tag: "A Casa do Javali",
     title: "Casa do Javali",
-    text: "Construída com troncos de madeira aparentes, oferece um ambiente amplo, cozinha completa e espaços pensados para reunir toda a família.",
+    text: "Casa rústica construída em pedra e troncos de árvores, com um ambiente amplo, cozinha completa e espaços pensados para reunir toda a família.",
     img: IMAGES.casaJavali,
     imgClass: "object-center group-hover:scale-105",
   },
