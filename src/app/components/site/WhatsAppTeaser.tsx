@@ -35,7 +35,7 @@ export function WhatsAppTeaser() {
                 agora
               </span>
             </div>
-            <p className="mt-0.5 text-[13px] leading-snug text-muted-foreground">
+            <p className="mt-0.5 text-[14px] leading-snug text-muted-foreground">
               Olá! Em caso de dúvidas deixe aqui que respondemos assim que
               possível! Obrigado!
             </p>

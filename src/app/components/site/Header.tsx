@@ -3,6 +3,7 @@ import { Menu, X } from "lucide-react";
 import { Button } from "../ui/button";
 import { waLink } from "../../data";
 import React from "react";
+import "../../../styles/header.css";
 
 function BoarIcon({ className }: { className?: string }) {
   return (
@@ -52,14 +53,16 @@ export function Header() {
           : "bg-transparent"
       }`}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-10 md:py-5">
+      <div className="header-container relative flex items-center justify-between">
+        {/* Logo */}
         <button
           onClick={() => go("inicio")}
-          className="flex items-center gap-2.5 text-primary-foreground"
+          className="z-10 flex items-center gap-2.5 text-primary-foreground"
         >
           <span className="flex size-9 items-center justify-center rounded-full border border-primary-foreground/30">
             <BoarIcon className="size-[1.5rem] text-[color:var(--accent)]" />
           </span>
+
           <span className="text-left leading-tight">
             <span className="block font-[family-name:var(--font-display)] text-[17px] tracking-wide">
               Pousada do Javali
@@ -70,7 +73,8 @@ export function Header() {
           </span>
         </button>
 
-        <nav className="hidden items-center gap-8 lg:flex">
+        {/* Nav centralizada na tela */}
+        <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-8 lg:flex">
           {NAV.map((n) => (
             <button
               key={n.id}
@@ -82,7 +86,7 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-2">
+        <div className="z-10 flex items-center gap-2">
           <Button
             asChild
             className="hidden rounded-full bg-[color:var(--accent)] px-5 text-[color:var(--accent-foreground)] hover:bg-[color:var(--accent)]/90 sm:inline-flex"
@@ -91,6 +95,7 @@ export function Header() {
               WhatsApp
             </a>
           </Button>
+
           <button
             onClick={() => setOpen((v) => !v)}
             className="grid size-9 place-items-center rounded-full text-primary-foreground lg:hidden"

@@ -2,6 +2,7 @@ import { MapPin, ArrowDown } from "lucide-react";
 import { Button } from "../ui/button";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
 import { IMAGES, waLink } from "../../data";
+import React from "react";
 
 export function Hero() {
   const go = (id: string) =>
