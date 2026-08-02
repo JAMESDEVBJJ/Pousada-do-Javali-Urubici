@@ -132,14 +132,17 @@ export function Sobre({ onSelectChale }: SobreProps) {
       </div>
 
       <div className="border-y border-border bg-secondary/40">
-        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-px overflow-hidden px-6 py-4 md:grid-cols-4 md:px-10">
+        <div className="mx-auto flex max-w-7xl flex-wrap justify-center gap-x-10 gap-y-2 px-6 py-4 md:px-10">
           {FEATURES.map((f) => (
-            <div key={f.label} className="flex items-center gap-3 px-2 py-5">
+            <div
+              key={f.label}
+              className="flex w-[calc(50%-20px)] items-center gap-3 py-5 md:w-[calc(25%-30px)]"
+            >
               <f.icon
                 className="size-6 shrink-0 text-[color:var(--accent)]"
                 strokeWidth={1.8}
               />
-              <span className="text-sm  text-primary ">{f.label}</span>
+              <span className="text-sm text-primary">{f.label}</span>
             </div>
           ))}
         </div>
