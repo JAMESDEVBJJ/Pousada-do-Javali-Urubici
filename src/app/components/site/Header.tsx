@@ -7,7 +7,12 @@ import "../../../styles/header.css";
 
 function BoarIcon({ className }: { className?: string }) {
   return (
-    <svg viewBox="0 0 512 512" fill="currentColor" className={className} aria-hidden="true">
+    <svg
+      viewBox="0 0 512 512"
+      fill="currentColor"
+      className={className}
+      aria-hidden="true"
+    >
       <path d="M439.292,130.183c-47.955-21.453-106.125-40.426-136.447-44.216c-24.459-3.057-106.125,30.322-106.125,30.322s-14.088-20.565-24.629-17.056c-10.541,3.517-19.928,12.208-41.011,40.322C81.578,205.557,0,229.453,0,229.453l43.921,57.978l33.556-10.822c-6.5-24.851-1.932-40.13-1.932-40.13c3.517,14.058,22.845,33.386,22.845,33.386l3.509,14.05l-45.675,15.812l14.05,17.574c0,0,38.657-5.27,80.823-10.541c42.166-5.271,50.945,29.862,50.945,29.862l17.574,89.61h35.134l14.058-79.068h159.884l17.566,79.068h38.65c0,0,19.432-87.589,26.398-180.448C516.991,169.979,487.306,151.665,439.292,130.183z" />
     </svg>
   );
@@ -35,7 +40,9 @@ export function Header() {
 
   const go = (id: string) => {
     setOpen(false);
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+    document
+      .getElementById(id)
+      ?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   return (
@@ -46,14 +53,16 @@ export function Header() {
           : "bg-transparent"
       }`}
     >
-      <div className="header-container">
+      <div className="header-container relative flex items-center justify-between">
+        {/* Logo */}
         <button
           onClick={() => go("inicio")}
-          className="flex items-center gap-2.5 text-primary-foreground"
+          className="z-10 flex items-center gap-2.5 text-primary-foreground"
         >
           <span className="flex size-9 items-center justify-center rounded-full border border-primary-foreground/30">
             <BoarIcon className="size-[1.5rem] text-[color:var(--accent)]" />
           </span>
+
           <span className="text-left leading-tight">
             <span className="block font-[family-name:var(--font-display)] text-[17px] tracking-wide">
               Pousada do Javali
@@ -64,7 +73,8 @@ export function Header() {
           </span>
         </button>
 
-        <nav className="hidden items-center gap-8 lg:flex">
+        {/* Nav centralizada na tela */}
+        <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-8 lg:flex">
           {NAV.map((n) => (
             <button
               key={n.id}
@@ -76,7 +86,7 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-2">
+        <div className="z-10 flex items-center gap-2">
           <Button
             asChild
             className="hidden rounded-full bg-[color:var(--accent)] px-5 text-[color:var(--accent-foreground)] hover:bg-[color:var(--accent)]/90 sm:inline-flex"
@@ -85,6 +95,7 @@ export function Header() {
               WhatsApp
             </a>
           </Button>
+
           <button
             onClick={() => setOpen((v) => !v)}
             className="grid size-9 place-items-center rounded-full text-primary-foreground lg:hidden"
