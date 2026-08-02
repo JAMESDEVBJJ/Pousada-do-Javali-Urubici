@@ -1,6 +1,7 @@
 import { MessageCircle, Phone } from "lucide-react";
 import { Button } from "../ui/button";
 import { waLink, telLink, CONTACT } from "../../data";
+import React from "react";
 
 export function Contato() {
   return (
@@ -13,8 +14,8 @@ export function Contato() {
           Gostou da propriedade? Agende uma visita.
         </h2>
         <p className="mt-5 text-[15px] leading-relaxed text-muted-foreground">
-          Fale diretamente conosco pelo WhatsApp ou por telefone. Teremos prazer em apresentar cada
-          detalhe da Hospedagem do Javali.
+          Fale diretamente conosco pelo WhatsApp ou por telefone. Teremos prazer
+          em apresentar cada detalhe da Hospedagem do Javali.
         </p>
 
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -23,7 +24,12 @@ export function Contato() {
             size="lg"
             className="h-13 rounded-full bg-[#25D366] px-8 text-white hover:bg-[#25D366]/90"
           >
-            <a href={waLink()} target="_blank" rel="noreferrer" className="gap-2.5 py-3.5">
+            <a
+              href={waLink()}
+              target="_blank"
+              rel="noreferrer"
+              className="gap-2.5 py-3.5"
+            >
               <MessageCircle className="size-5" /> Falar no WhatsApp
             </a>
           </Button>
