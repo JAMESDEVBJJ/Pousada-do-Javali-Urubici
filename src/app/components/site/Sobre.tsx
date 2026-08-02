@@ -41,7 +41,7 @@ const FEATURES = [
   { icon: BedDouble, label: "Quartos aconchegantes" },
   { icon: Bath, label: "Banheiros privativos" },
   { icon: Fish, label: "Lago de carpas" },
-  { icon: Wifi, label: "Wi-Fi gratuito" },
+  { icon: Wifi, label: "Wi-Fi" },
   { icon: Mountain, label: "Vista para a serra" },
   { icon: Baby, label: "Parquinho infantil" },
 ];
@@ -51,7 +51,7 @@ const CHALES: Chale[] = [
     albumId: "chale1",
     tag: "A Casa de vidro",
     title: "Casa de vidro",
-    text: "Luz natural durante todo o dia, teto de vidro, lustres, chao quente e uma jacuzzi para relaxar. Varanda pra floresta e cozinha completa para sua estadia.",
+    text: "Luz natural durante todo o dia, teto de vidro, lustres, chao com aquecimento e uma jacuzzi para relaxar. Varanda pra floresta e cozinha completa para sua estadia.",
     img: IMAGES.casas,
     imgClass: "object-right scale-[1.4] origin-right group-hover:scale-[1.45]",
     details: [
@@ -97,19 +97,22 @@ export function Sobre({ onSelectChale }: SobreProps) {
             <p>
               Localizada na Estrada Geral da Jararaca, em Urubici, a propriedade
               reúne dois chalés independentes construídos em madeira, cercados
-              por vegetação nativa e pelo silêncio das montanhas.
+              pela tranquilidade característica da serra.
             </p>
+
             <p>
-              São ambientes pensados para o conforto em qualquer estação — do
-              calor da lareira no inverno serrano às manhãs de neblina que
-              descem pelo vale. Os chalés contam com painéis solares, garantindo
-              energia limpa e renovável o ano inteiro. Um lugar para morar, para
-              investir ou para dar vida a uma pousada de charme.
+              Com aproximadamente 4 hectares, a propriedade conta com rio,
+              cachoeira, lago, pomar e poço artesiano de grande vazão,
+              garantindo água potável de excelente qualidade. Os chalés oferecem
+              conforto em todas as estações, com lareira, ambientes completos e
+              sistema de energia por painéis solares.
             </p>
+
             <p>
-              A estrutura já está pronta: acessos, parquinho, elétrodomésticos,
-              área verde ampla, espaço para receber e uma natureza que se torna
-              parte da casa.
+              A estrutura está pronta para uso, com acessos internos, parquinho,
+              eletrodomésticos e espaço para ampliação ou novos projetos. Uma
+              excelente oportunidade para morar na serra ou investir em turismo
+              e hospedagem em uma das regiões mais procuradas de Santa Catarina.
             </p>
           </div>
         </div>

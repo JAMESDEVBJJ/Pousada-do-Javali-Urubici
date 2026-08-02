@@ -207,6 +207,12 @@ export const ATTRACTIONS: Attraction[] = [
       "Um dos cânions mais imponentes do Sul, esculpido na rocha da serra.",
   },
   {
+    name: "Serra do Rio do Rastro",
+    distance: "≈ 1h",
+    description:
+      "Uma das estradas mais cênicas do Brasil, com curvas sinuosas e mirantes espetaculares.",
+  },
+  {
     name: "Morro da Igreja",
     distance: "≈ 35 min",
     description:
