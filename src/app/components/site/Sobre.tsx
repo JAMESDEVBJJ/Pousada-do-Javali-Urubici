@@ -10,10 +10,28 @@ import {
   Sun,
   Fish,
   Baby,
+  Waves,
+  Thermometer,
+  Snowflake,
+  Droplets,
+  Info,
+  X,
 } from "lucide-react";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
 import { IMAGES } from "../../data";
-import React from "react";
+import React, { useEffect, useState } from "react";
+
+type ChaleDetail = { icon: typeof Home; label: string };
+
+type Chale = {
+  albumId: string;
+  tag: string;
+  title: string;
+  text: string;
+  img: string;
+  imgClass: string;
+  details: ChaleDetail[];
+};
 
 const FEATURES = [
   { icon: Home, label: "2 chalés completos" },
@@ -28,7 +46,7 @@ const FEATURES = [
   { icon: Baby, label: "Parquinho infantil" },
 ];
 
-const CHALES = [
+const CHALES: Chale[] = [
   {
     albumId: "chale1",
     tag: "A Casa de vidro",
@@ -36,6 +54,11 @@ const CHALES = [
     text: "Luz natural durante todo o dia, teto de vidro, lustres, chao quente e uma jacuzzi para relaxar. Varanda pra floresta e cozinha completa para sua estadia.",
     img: IMAGES.casas,
     imgClass: "object-right scale-[1.4] origin-right group-hover:scale-[1.45]",
+    details: [
+      { icon: Waves, label: "Jacuzzi" },
+      { icon: Thermometer, label: "Chão aquecido" },
+      { icon: Snowflake, label: "Ar condicionado" },
+    ],
   },
   {
     albumId: "chale2",
@@ -44,6 +67,12 @@ const CHALES = [
     text: "Casa rústica construída em pedra e troncos de árvores, com um ambiente amplo, cozinha completa e espaços pensados para reunir toda a família.",
     img: IMAGES.casaJavali,
     imgClass: "object-center group-hover:scale-105",
+    details: [
+      { icon: Droplets, label: "Água aquecida em todas as torneiras" },
+      { icon: Flame, label: "Calefator" },
+      { icon: ChefHat, label: "Sala ampla com cozinha e churrasqueira" },
+      { icon: BedDouble, label: "3 quartos e 2 banheiros" },
+    ],
   },
 ];
 
@@ -52,6 +81,8 @@ type SobreProps = {
 };
 
 export function Sobre({ onSelectChale }: SobreProps) {
+  const [detail, setDetail] = useState<Chale | null>(null);
+
   return (
     <section id="sobre" className="scroll-mt-24 bg-background">
       <div className="mx-auto grid max-w-7xl gap-12 px-6 py-18 md:px-10 lg:grid-cols-2 lg:gap-20 lg:py-24">
@@ -149,6 +180,18 @@ export function Sobre({ onSelectChale }: SobreProps) {
                 <span className="absolute left-5 top-5 rounded-full bg-primary/90 px-4 py-1.5 text-[11px] uppercase tracking-[0.2em] text-primary-foreground backdrop-blur">
                   {c.tag}
                 </span>
+
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setDetail(c);
+                  }}
+                  aria-label={`Ver detalhes da ${c.title}`}
+                  className="absolute right-4 top-5 inline-flex items-center gap-1.5 rounded-full bg-white/90 px-3 py-1.5 text-[11px] uppercase tracking-[0.14em] text-primary shadow-md backdrop-blur transition hover:bg-white"
+                >
+                  <Info className="size-3.5" /> Detalhes
+                </button>
               </div>
               <div className="p-7">
                 <h3 className="font-[family-name:var(--font-display)] text-2xl text-primary">
@@ -165,6 +208,82 @@ export function Sobre({ onSelectChale }: SobreProps) {
           ))}
         </div>
       </div>
+      {detail && <ChaleModal chale={detail} onClose={() => setDetail(null)} />}
     </section>
+  );
+}
+
+function ChaleModal({ chale, onClose }: { chale: Chale; onClose: () => void }) {
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+    window.addEventListener("keydown", onKey);
+    document.body.style.overflow = "hidden";
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.body.style.overflow = "";
+    };
+  }, [onClose]);
+
+  return (
+    <div
+      className="fixed inset-0 z-[100] flex items-end justify-center bg-black/60 p-0 backdrop-blur-sm sm:items-center sm:p-4"
+      onClick={onClose}
+    >
+      <div
+        role="dialog"
+        aria-modal="true"
+        aria-label={`Detalhes da ${chale.title}`}
+        onClick={(e) => e.stopPropagation()}
+        className="relative w-full max-w-lg overflow-hidden rounded-t-3xl bg-card shadow-2xl sm:rounded-3xl"
+      >
+        <div className="relative h-40 overflow-hidden bg-muted sm:h-48">
+          <ImageWithFallback
+            src={chale.img}
+            alt={chale.title}
+            className={`size-full object-cover ${
+              chale.imgClass?.replace(/group-hover:[^\s]+/g, "") ?? ""
+            }`}
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent" />
+          <button
+            type="button"
+            onClick={onClose}
+            aria-label="Fechar"
+            className="absolute right-4 top-4 grid size-9 place-items-center rounded-full bg-black/40 text-white backdrop-blur transition hover:bg-black/60"
+          >
+            <X className="size-5" />
+          </button>
+          <div className="absolute bottom-4 left-5 right-5 text-primary-foreground">
+            <span className="text-[11px] uppercase tracking-[0.24em] text-primary-foreground/80">
+              {chale.tag}
+            </span>
+          </div>
+        </div>
+
+        <div className="max-h-[55vh] overflow-y-auto p-6 sm:p-7">
+          <p className="text-[16px] leading-relaxed text-muted-foreground">
+            {chale.text}
+          </p>
+
+          <p className="mt-6 text-[13px] uppercase tracking-[0.28em] text-[color:var(--accent)]">
+            Diferenciais deste chalé
+          </p>
+          <ul className="mt-4 space-y-3">
+            {chale.details.map((d) => (
+              <li key={d.label} className="flex items-start gap-3">
+                <span className="mt-0.5 grid size-9 shrink-0 place-items-center rounded-full bg-secondary/60 text-[color:var(--accent)]">
+                  <d.icon className="size-[1.125rem]" strokeWidth={1.5} />
+                </span>
+                <span className="pt-1.5 text-[15px] text-primary">
+                  {d.label}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
   );
 }
