@@ -72,7 +72,7 @@ export type GalleryAlbum = {
 const naturezaBlock: GalleryBlock = {
   label: "Natureza",
   images: [
-    { src: neveImg, caption: "Serra coberta de neve" },
+    { src: neveImg, caption: "Serra com neve" },
     { src: lagoCarpasImg, caption: "Lago de carpas" },
     { src: caminhoIMg, caption: "Caminho pela mata" },
   ],
