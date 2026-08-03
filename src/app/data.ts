@@ -31,49 +31,44 @@ export const IMAGES = {
   heroLandscape: u("1656615771753-9faa5eb1f780", 2000, 1400),
   sitio: sitioImg,
 
-  // Exterior
   exterior1: lagoCarpasImg,
   exterior2: casaJavaliImg,
   exterior3: neveImg,
   exterior4: caminhoIMg,
 
-  // Chalé 1
   c1quarto: c1quarto,
   c1banheiro: c1Banheiro,
   c1cozinha: c1Coz,
   c1natureza: u("1719875022807-4d1d10c7f1b7", 1000, 1300),
   c1vista: u("1543059605-8e9a6959d120", 1400, 900),
 
-  // Chalé 2
   c2quarto: c2Quart2,
   c2banheiro: c2Ban,
   c2cozinha: c2Coz,
   c2natureza: u("1588679964546-316eb53ba5cf", 1400, 900),
   c2vista: u("1700787221440-c2e544b4174b", 1000, 1300),
 
-  // Fachadas dos chalés
   casas: casasImg,
   casaJavali: casaJavaliImg,
 
-  // Extra
   bedroomWood: u("1631940182015-6604116ead7d", 1200, 900),
   kitchenWood: u("1631555542605-877a63b6e3a6", 1200, 900),
 };
 
-// ---- Galeria estruturada ----
 export type GalleryImage = { src: string; caption: string };
+
 export type GalleryBlock = {
   label: string;
   images: GalleryImage[];
 };
+
 export type GalleryAlbum = {
   id: string;
   name: string;
-  carousel?: boolean; // quando true, categorias com várias fotos viram carrossel
+  carousel?: boolean;
   blocks: GalleryBlock[];
 };
 
-// Natureza é compartilhada entre os dois chalés.
 const naturezaBlock: GalleryBlock = {
   label: "Natureza",
   images: [

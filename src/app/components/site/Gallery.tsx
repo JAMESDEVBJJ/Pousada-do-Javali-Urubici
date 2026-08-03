@@ -54,14 +54,24 @@ export function Gallery({ active: controlled, onActiveChange }: GalleryProps) {
         </div>
 
         {album.carousel ? (
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {album.blocks.map((b) => (
-              <CarouselTile
-                key={`${album.id}-${b.label}`}
-                label={b.label}
-                images={b.images}
-                onOpen={(i) => open(b.images, i)}
-              />
+          <div className="grid grid-cols-1 gap-y-8 gap-x-4 lg:grid-cols-2 lg:gap-x-8 xl:gap-x-0">
+            {album.blocks.map((b, i) => (
+              <div
+                key={b.label}
+                className={
+                  b.label === "Natureza"
+                    ? "lg:col-span-2 flex justify-center"
+                    : "flex justify-center"
+                }
+              >
+                <div className="w-full max-w-[520px]">
+                  <CarouselTile
+                    label={b.label}
+                    images={b.images}
+                    onOpen={(i) => open(b.images, i)}
+                  />
+                </div>
+              </div>
             ))}
           </div>
         ) : (
@@ -134,10 +144,9 @@ function CarouselTile({
   const next = () => setI((p) => (p + 1) % images.length);
   const current = images[i];
 
-  // Arrastar com o dedo (touch) ou com o mouse pressionado troca a foto.
   const startX = useRef<number | null>(null);
   const moved = useRef(false);
-  const THRESHOLD = 45; // px mínimos para considerar um swipe
+  const THRESHOLD = 45;
 
   const onPointerDown = (e: React.PointerEvent) => {
     startX.current = e.clientX;
@@ -157,7 +166,6 @@ function CarouselTile({
   };
 
   const handleClick = () => {
-    // Não abre o lightbox se o gesto foi um arraste.
     if (moved.current) return;
     onOpen(i);
   };
