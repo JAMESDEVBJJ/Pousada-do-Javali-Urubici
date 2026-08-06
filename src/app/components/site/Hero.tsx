@@ -14,15 +14,28 @@ const SLIDES = [
   },
   { src: urubici, alt: "Paisagem da serra de Urubici" },
   { src: lucasCaixeta, alt: "Montanhas e natureza da Serra Catarinense" },
-  { src: ivanCheremisin, alt: "Vista deslumbrante de Urubici" },
+  { src: ivanCheremisin, alt: "Vista de Urubici" },
 ];
 
 export function Hero() {
   const [current, setCurrent] = useState(0);
+  const [ready, setReady] = useState(false);
   const timeout = useRef<ReturnType<typeof setTimeout>>(0);
 
   useEffect(() => {
-    const delay = 5000 + Math.random() * 2000;
+    // força um frame em scale-100 antes de liberar o zoom,
+    // pra transição também disparar corretamente no 1º slide
+    const raf = requestAnimationFrame(() => {
+      requestAnimationFrame(() => setReady(true));
+    });
+    return () => cancelAnimationFrame(raf);
+  }, []);
+
+  const isFirstCycle = useRef(true);
+
+  useEffect(() => {
+    const delay = isFirstCycle.current ? 3500 : 5000 + Math.random() * 2000;
+    isFirstCycle.current = false;
     timeout.current = setTimeout(() => {
       setCurrent((c) => (c + 1) % SLIDES.length);
     }, delay);
@@ -41,22 +54,17 @@ export function Hero() {
         {SLIDES.map((slide, index) => (
           <div
             key={slide.src}
-            className={`absolute inset-0 transition-opacity duration-[2000ms] ease-in-out ${
-              index === current ? "opacity-100" : "opacity-0"
-            }`}
+            className={`absolute inset-0 transition-opacity duration-[2000ms] ease-in-out ${index === current ? "opacity-100" : "opacity-0"
+              }`}
           >
             <ImageWithFallback
               src={slide.src}
               alt={slide.alt}
-              className={`size-full object-cover will-change-transform ${
-                index === current
-                  ? // Imagem ativa: começa no zoom normal (scale 1) e vai
-                    // ampliando lentamente enquanto está visível.
-                    "scale-[1.08] transition-transform duration-[8000ms] ease-out"
-                  : // Imagem inativa: mantém o zoom durante o fade e só volta ao
-                    // normal DEPOIS do crossfade (delay), já invisível — sem revert.
-                    "scale-100 transition-transform duration-0 delay-[2000ms]"
-              }`}
+              className={`size-full object-cover will-change-transform ${index === current
+                ? `transition-transform duration-[8000ms] ease-out ${ready ? "scale-[1.08]" : "scale-100"
+                }`
+                : "scale-100 transition-transform duration-0 delay-[2000ms]"
+                }`}
             />
           </div>
         ))}
@@ -104,11 +112,10 @@ export function Hero() {
               key={slide.src}
               onClick={() => setCurrent(index)}
               aria-label={`Ver imagem ${index + 1}`}
-              className={`h-1 rounded-full transition-all duration-500 ${
-                index === current
-                  ? "w-5 bg-primary-foreground/80"
-                  : "w-1 bg-primary-foreground/30 hover:bg-primary-foreground/60"
-              }`}
+              className={`h-1 rounded-full transition-all duration-500 ${index === current
+                ? "w-5 bg-primary-foreground/80"
+                : "w-1 bg-primary-foreground/30 hover:bg-primary-foreground/60"
+                }`}
             />
           ))}
         </div>
